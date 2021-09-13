@@ -53,23 +53,40 @@ class SingleArticle extends Component {
     return (
       <div>
         <div className="container">
-          <div className="flex">
-            <span className="">
-              <h1 className="text-red">{article.title}</h1>
-              <img src={article.author.image} alt="" className="image" />
-            </span>
+          <div className="head">
+            <h1 className="text-red article-title font-serif mt-4">
+              {article.title}
+            </h1>
+          </div>
+          <div className="flex mt-6 pl-20">
+            <div className="mr-6">
+              <img
+                src={article.author.image}
+                alt=""
+                className="image rounded-full border-8 border-green-600 border-double "
+              />
+            </div>
             <div>
               <Link to="/">
-                <h3> {article.author.username}</h3>
+                <h3 className="capitalize text-gray-500 mb-1">
+                  {" "}
+                  {article.author.username}
+                </h3>
               </Link>
               <Link to="">
-                <date>{article.createdAt}</date>
+                <time className="text-gray-600 text-sm">
+                  {article.createdAt}
+                </time>
               </Link>
             </div>
           </div>
-          <p>{article.description}</p>
         </div>
         <div>
+          <p className="text-center text-xl p-24 pt-8 leading-10 text-gray-800">
+            {article.description}
+          </p>
+        </div>
+        <div className="text-center">
           <CommentBox
             slug={this.props.match.params.slug}
             user={this.props.user}

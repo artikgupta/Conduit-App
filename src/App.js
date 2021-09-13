@@ -13,6 +13,7 @@ import { userVerifyURL } from "./Components/utils/constant";
 import NewPosts from "./Components/NewPosts";
 import Settings from "./Components/Settings";
 import Profile from "./Components/Profile";
+import Logout from "./Components/Logout";
 import Loader from "./Components/Loader";
 
 class App extends React.Component {
@@ -28,10 +29,6 @@ class App extends React.Component {
   componentDidMount() {
     let storageKey = localStorage[localStorageKey];
     if (storageKey) {
-      // this.setState({
-      //   isLoggedIn: true,
-      // });
-
       fetch(userVerifyURL, {
         method: "GET",
         headers: {
@@ -69,7 +66,10 @@ class App extends React.Component {
       <div>
         <Header isLoggedIn={this.state.isLoggedIn} user={this.state.user} />
         {this.state.isLoggedIn ? (
-          <AuthenticatedApp user={this.state.user} />
+          <AuthenticatedApp
+            user={this.state.user}
+            setState={(state) => this.setState(state)}
+          />
         ) : (
           <UnauthenticatedApp
             updateUser={this.updateUser}
@@ -82,7 +82,7 @@ class App extends React.Component {
 }
 
 function AuthenticatedApp(props) {
-  console.log(props.user, "sdsdfs");
+  // console.log(props, "sdsdfs");
   if (!props.user) {
     return <Loader />;
   }
@@ -90,25 +90,33 @@ function AuthenticatedApp(props) {
     <div>
       <Switch>
         <Route path="/" component={Home} exact />
-        <Route path="/signin">
-          <SignIn />
-        </Route>
-        <Route path="/signup">
-          <SignUp />
-        </Route>
         <Route path="/new-post">
           <NewPosts user={props.user} />
         </Route>
         <Route path="/settings">
-          <Settings />
+          <Settings currentUser={props.user} />
+        </Route>
+        <Route path="/profile/:username">
+          <Profile currentUser={props.user} />
         </Route>
         <Route path="/profile">
-          <Profile user={props.user} />
+          <Profile currentUser={props.user} />
         </Route>
         <Route
           path="/article/:slug"
           component={() => <SingleArticle user={props.user} />}
         />
+        <Route
+          path="/logout"
+          component={(defaultProps) => (
+            <Logout
+              {...defaultProps}
+              user={props.user}
+              setUser={(user) => props.setState({ user })}
+              setIsLoggedIn={(isLoggedIn) => props.setState({ isLoggedIn })}
+            />
+          )}
+        ></Route>
         <Route path="*" component={NoMatch} />
       </Switch>
     </div>

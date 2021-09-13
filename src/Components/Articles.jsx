@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { articlesURL } from "./utils/constant";
-import Posts from "./Posts";
+import Post from "./Post";
 import Loader from "./Loader";
 import FeedNav from "./FeedNav";
 
 function Articles(props) {
-  console.log(props);
+  // console.log(props);
 
   if (props.error) {
     return <p>{props.error}</p>;
@@ -25,11 +25,7 @@ function Articles(props) {
       <div>
         {props.data &&
           props.data.map((article) => {
-            return (
-              <>
-                <Posts {...article} />
-              </>
-            );
+            return <Post key={article.slug} {...article} />;
           })}
       </div>
     </div>

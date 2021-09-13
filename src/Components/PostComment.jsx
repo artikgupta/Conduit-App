@@ -44,13 +44,16 @@ class PostComment extends React.Component {
           <h4 className="py-2 text-green-500">Add Comment:</h4>
           <form onSubmit={this.submitHandler}>
             <input
-              className="py-2"
+              className=" border-2 border-green-700 w-8/12 h-12"
               type="text"
               name="body"
               value={this.state.body}
               onChange={this.onChangeHandler}
             />
-            <input type="submit" className="py-2" />
+            <input
+              type="submit"
+              className="mt-4 ml-6 w-1/12 h-12 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+            />
           </form>
         </div>
       </div>

@@ -41,11 +41,14 @@ export default class Articles extends Component {
       <div className="flex-30 ">
         <h1 className="text-2xl uppercase font-medium my-4">Popular Tags</h1>
         <div>
-          <div className="flex-child tags">
+          <div className="flex flex-wrap tags">
             {this.state.data &&
               this.state.data.map((tags) => {
                 return (
-                  <div key={tags} className="bg-blue-300 p-2 rounded-md m-2">
+                  <div
+                    key={tags}
+                    className="bg-green-300 text-sm py-1 px-2 rounded-md m-2"
+                  >
                     <button onClick={() => this.props.addTab(tags)}>
                       {tags}
                     </button>

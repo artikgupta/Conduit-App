@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function FeedNav(props) {
   return (
-    <div className="feed_nav">
+    <div className="feed_nav m-2">
       <ul className="flex space-between">
         <li onClick={props.removeTab}>
           <Link
