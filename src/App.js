@@ -27,7 +27,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    let storageKey = localStorage[localStorageKey];
+    let storageKey = localStorage[localStorageKey]; // token undefined || "afdhfjds"
     if (storageKey) {
       fetch(userVerifyURL, {
         method: "GET",

@@ -8,7 +8,7 @@ const signupURL = ROOT_URL + "/users";
 
 const profileURL = ROOT_URL + "/profiles";
 
-const loginURL = ROOT_URL + "users/login";
+const loginURL = ROOT_URL + "/users/login";
 
 const userVerifyURL = ROOT_URL + "/user";
 
