@@ -1,5 +1,6 @@
 import React from "react";
 import { signupURL } from "./utils/constant";
+import { Link } from "react-router-dom";
 
 class SignUp extends React.Component {
   constructor() {
@@ -83,9 +84,9 @@ class SignUp extends React.Component {
     return (
       <div className="container">
         <h1 className="text-center mb-10 font-bold">Sign Up</h1>
-        <a href="#" className="text-center block text-green-300">
+        <Link to="login" className="text-center block text-green-300">
           Have an account
-        </a>
+        </Link>
         <form className="form" onSubmit={this.handleSubmit}>
           <label>
             <input

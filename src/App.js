@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 
 import Header from "./Components/Header";
 import SignUp from "./Components/SignUp";
@@ -16,7 +16,7 @@ import Profile from "./Components/Profile";
 import Logout from "./Components/Logout";
 import Loader from "./Components/Loader";
 
-class App extends React.Component {
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = {

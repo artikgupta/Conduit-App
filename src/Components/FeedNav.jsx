@@ -7,9 +7,11 @@ function FeedNav(props) {
       <ul className="flex space-between">
         <li onClick={props.removeTab}>
           <Link
-            className={props.activeTab === "" && "active_tab"}
+            className={
+              props.activeTab === "" &&
+              "active_tab text-2xl uppercase font-medium my-4"
+            }
             to="/"
-            className="text-2xl uppercase font-medium my-4"
           >
             Global Feed
           </Link>

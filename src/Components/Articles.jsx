@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { articlesURL } from "./utils/constant";
 import Post from "./Post";
 import Loader from "./Loader";

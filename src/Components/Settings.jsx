@@ -62,11 +62,11 @@ export default class Settings extends Component {
 
     switch (name) {
       case "password":
-        let passwordError;
-        if (value.length === "") {
-          passwordError = "Password can't be empty";
-        }
-
+        // let passwordError;
+        // if (value.length === "") {
+        //   passwordError = "Password can't be empty";
+        // }
+        break;
       default:
         break;
     }

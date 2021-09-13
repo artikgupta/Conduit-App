@@ -22,7 +22,7 @@ class NewPosts extends React.Component {
   submitHandler = (e) => {
     e.preventDefault();
     // console.log("DSfds");
-    const { title, description, body, tags } = this.state;
+    // const { title, description, body, tags } = this.state;
     fetch(articlesURL, {
       method: "POST",
       headers: {

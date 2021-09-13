@@ -4,6 +4,7 @@ import "../Components/style.css";
 import { loginURL } from "./utils/constant";
 
 import { withRouter } from "react-router";
+import { Link } from "react-router-dom";
 
 class SignIn extends React.Component {
   constructor() {
@@ -51,7 +52,7 @@ class SignIn extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const { username, email, password } = this.state;
+    const { email, password } = this.state;
     fetch(loginURL, {
       method: "POST",
       headers: {
@@ -90,9 +91,9 @@ class SignIn extends React.Component {
     return (
       <div className="container">
         <h1 className="text-center mb-10 font-bold">Sign In</h1>
-        <a href="#" className="text-center block text-green-300">
+        <Link to="/register" className="text-center block text-green-300">
           Need an account
-        </a>
+        </Link>
         <form className="form" onSubmit={this.handleSubmit}>
           <label>
             <input

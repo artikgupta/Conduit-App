@@ -44,6 +44,7 @@ function ProfileBanner(props) {
     <div className="text-center">
       <div className="text-center">
         <img
+          alt="profile"
           className="mx-auto w-36 rounded-full border-green-700 border-double border-8 mb-4 mt-4"
           src={image || "/images/smiley.jpg"}
         />

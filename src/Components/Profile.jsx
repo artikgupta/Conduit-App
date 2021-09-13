@@ -47,11 +47,10 @@ class Profile extends Component {
     this.fetchPosts(1);
   };
 
-  fetchPosts = (pageNo) => {
+  fetchPosts = (pageNo = 1) => {
     console.log(this.state);
     this.setState({
       pageNo,
-      pageNo: 1,
       articles: [],
       articlesCount: 0,
     });
