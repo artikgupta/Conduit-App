@@ -1,6 +1,6 @@
 import React from "react";
 import { signupURL } from "./utils/constant";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class SignUp extends React.Component {
   constructor() {

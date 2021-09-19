@@ -4,7 +4,7 @@ import "../Components/style.css";
 import { loginURL } from "./utils/constant";
 
 import { withRouter } from "react-router";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class SignIn extends React.Component {
   constructor() {
