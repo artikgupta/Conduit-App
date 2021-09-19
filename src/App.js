@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 
 import Header from "./Components/Header";
 import SignUp from "./Components/SignUp";
@@ -117,6 +117,12 @@ function AuthenticatedApp(props) {
             />
           )}
         ></Route>
+        <Route path="/signin">
+          <Redirect to="/" />
+        </Route>
+        <Route path="/signup">
+          <Redirect to="/" />
+        </Route>
         <Route path="*" component={NoMatch} />
       </Switch>
     </div>

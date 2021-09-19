@@ -24,7 +24,7 @@ export default class Articles extends Component {
       })
       .then((data) =>
         this.setState({
-          data: data.tags,
+          data: data.tags.filter((tag) => tag),
         })
       )
       .catch((err) => {

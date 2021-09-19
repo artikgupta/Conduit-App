@@ -9,7 +9,9 @@ export default class Header extends Component {
       <div className="container">
         <div className="flex-box">
           <div className="logo-container">
-            <h1 className="brand">conduit</h1>
+            <Link to="/">
+              <h1 className="brand">conduit</h1>
+            </Link>
           </div>
           <nav className="flex items-center justify-center">
             {this.props.isLoggedIn ? (
